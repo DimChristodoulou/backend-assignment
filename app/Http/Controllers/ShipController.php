@@ -152,7 +152,7 @@ class ShipController extends Controller
         }
         else if($request->accepts(['text/csv'])){
             $filename = "output.csv";
-            $csvFile = fopen($filename, 'w+');
+            $csvFile = fopen($filename, 'w');
 
             fputcsv($csvFile, $model->getCsvAttributes());
 

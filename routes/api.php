@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/ships', [ShipController::class, 'getPositions']);
-Route::get('/ships/{mmsi}', [ShipController::class, 'getmmsi']);
+Route::get('/ships/{mmsi}', [ShipController::class, 'getmmsi'])->middleware('cacheResponse:300');;
 Route::get('/ships/latStart:{latStart}/latEnd:{latEnd}', [ShipController::class, 'getByLatRange']);
 Route::get('/ships/lonStart:{lonStart}/lonEnd:{lonEnd}', [ShipController::class, 'getByLonRange']);
 Route::get('/ships/from:{timeStart}/to:{timeEnd}', [ShipController::class, 'getByTimeInterval']);
