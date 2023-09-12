@@ -19,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/ships', [ShipController::class, 'getPositions']);
 Route::get('/ships/{mmsi}', [ShipController::class, 'getmmsi']);
 Route::get('/ships/latStart:{latStart}/latEnd:{latEnd}', [ShipController::class, 'getByLatRange']);
 Route::get('/ships/lonStart:{lonStart}/lonEnd:{lonEnd}', [ShipController::class, 'getByLonRange']);
