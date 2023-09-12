@@ -1,5 +1,7 @@
 # MT Backend Assignment
 
+# Setting up the project locally
+
 - Clone the project and run
     > composer install
 
@@ -17,6 +19,33 @@
 - Finally, to start the development server, run
     > php artisan serve
 
+# Setting up the project via docker and sail
+
+Container support is provided via sail. To run the project via sail:
+
+- Clone the project and run
+    > composer install
+
+- After this, create a `.env` file at the root of the project and copy the contents of `.env.example` into it.
+
+- Run `sail up` (for UNIX systems) or `bash ./vendor/laravel/sail/bin/sail up` for Windows.
+
+You now have 2 options: either run the server and DB operations from the container terminal or via sail:
+
+- To run the DB migration and seed the table, you now run:
+   > sail artisan migrate --seed (for sail)
+   > php artisan migrate --seed (for container terminal)
+
+- To run tests
+    > sail artisan test (for sail)
+    > php artisan test (for container terminal)
+
+- To start the development server, run
+    > sail artisan serve (for sail)
+    > php artisan serve (for container terminal)
+
+
+Please note that I am working in a Windows system with WSL and Docker Desktop, so the above is tested for Windows.
 
 # Architecture
 
