@@ -20,6 +20,7 @@ class LogRequest
             'Request Method' => $request->method(),
             'Request Path' => $request->path(),
             'Request Params' => $request->all(),
+            'Content Type' => $request->header('Accept'),
             'Request IP' => $request->ip(),
             'Origin' => $request->header('host'),
         ];
