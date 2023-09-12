@@ -6,6 +6,7 @@
     > composer install
 
 - After this, create a `.env` file at the root of the project and copy the contents of `.env.example` into it.
+  -  The example env contains values to configure the DB.
 
 - To run the DB migration and seed the table, run
     > php artisan migrate --seed
@@ -27,6 +28,7 @@ Container support is provided via sail. To run the project via sail:
     > composer install
 
 - After this, create a `.env` file at the root of the project and copy the contents of `.env.example` into it.
+  - The example env contains values to configure the DB.
 
 - Run `sail up` (for UNIX systems) or `bash ./vendor/laravel/sail/bin/sail up` for Windows.
 
